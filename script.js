@@ -11,7 +11,7 @@ submit.addEventListener('click', function(event){
 
 async function getWeather(cityName) {
     try {
-        apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey + "&units=metric"
+        apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=metric`
         console.log(apiURL);
         const response = await fetch(apiURL);
         if (response.ok != true) {
@@ -29,4 +29,6 @@ function displayWeather() {
     const name = data.name;
     const temp = data.main.temp;
     const description = data.weather[0].description;
+
+
 }
