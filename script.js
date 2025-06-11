@@ -9,6 +9,7 @@ submit.addEventListener('click', function(event){
     getWeather(cityName);
 })
 
+// Sends fetch request using openweathermap API, calling displayWeather() if successful
 async function getWeather(cityName) {
     try {
         apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=metric`
@@ -25,6 +26,7 @@ async function getWeather(cityName) {
     }
 }
 
+// Takes data from getWeather() and displays city name, temperature and weather description to the user
 function displayWeather(data) {
     const name = data.name;
     const temp = data.main.temp;
