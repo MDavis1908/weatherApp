@@ -12,23 +12,25 @@ submit.addEventListener('click', function(event){
 async function getWeather(cityName) {
     try {
         apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=metric`
-        console.log(apiURL);
         const response = await fetch(apiURL);
         if (response.ok != true) {
             throw new Error("Could not fetch resource");
         }
         const data = await response.json();
-        console.log(data);
         displayWeather(data);
     } catch (error) {
-
+        const badNameHTML = `<h2>The city could not be found, please check the spelling and try again</h2>`
+        results.classList.add("results");
+        results.innerHTML = badNameHTML;
     }
 }
 
-function displayWeather() {
+function displayWeather(data) {
     const name = data.name;
     const temp = data.main.temp;
     const description = data.weather[0].description;
 
-
+    const weatherHTML = `<h2>${name}</h2><p>The temperature outside is ${temp} degrees with ${description}`;
+    results.classList.add("results");
+    results.innerHTML = weatherHTML;
 }
