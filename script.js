@@ -1,7 +1,7 @@
 const input = document.getElementById("user-input");
 const submit = document.getElementById("user-submit");
 const results = document.getElementById("results-container");
-const APIKey = "384e15f6cfe26fa731cc10bbc1a2115c";
+const APIKey = "DUMMYAPI";
 // Listens for the submit button to be clicked and assigns the value in textbox to cityName variable
 submit.addEventListener('click', function(event){
     let cityName = input.value;
