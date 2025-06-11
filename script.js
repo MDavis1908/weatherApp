@@ -12,7 +12,7 @@ submit.addEventListener('click', function(event){
 // Sends fetch request using openweathermap API, calling displayWeather() if successful
 async function getWeather(cityName) {
     try {
-        apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=metric`
+        const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIKey}&units=metric`
         const response = await fetch(apiURL);
         if (response.ok != true) {
             throw new Error("Could not fetch resource");
@@ -32,7 +32,7 @@ function displayWeather(data) {
     const temp = data.main.temp;
     const description = data.weather[0].description;
 
-    const weatherHTML = `<h2>${name}</h2><p>The temperature outside is ${temp} degrees with ${description}`;
+    const weatherHTML = `<h2>${name}</h2><p>The temperature outside is ${temp} degrees with ${description}</p>`;
     results.classList.add("results");
     results.innerHTML = weatherHTML;
 }

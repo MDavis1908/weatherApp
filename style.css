@@ -28,11 +28,6 @@ h1 {
 #user-submit:hover {
     background-color:rgb(141, 140, 140);
 }
-#results-container {
-    width: 300px;
-    margin: 20px;
-    padding: 20px;
-}
 .results {
     width: 300px;
     margin: 20px;
